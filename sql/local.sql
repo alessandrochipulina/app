@@ -43,7 +43,7 @@ CREATE TABLE `bookings` (
   CONSTRAINT `bookings_promo_id_foreign` FOREIGN KEY (`promo_id`) REFERENCES `promos` (`id`) ON DELETE SET NULL,
   CONSTRAINT `bookings_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE SET NULL,
   CONSTRAINT `bookings_service_id_foreign` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,6 +53,8 @@ CREATE TABLE `bookings` (
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
 INSERT INTO `bookings` VALUES (1,'2023-08-14 10:00:00',2,1,'Hola',2,2,NULL,20,'2023-08-12 11:03:50','2023-08-12 15:31:31');
+INSERT INTO `bookings` VALUES (2,'2023-08-15 10:00:00',3,1,'hola',2,1,NULL,28,'2023-08-13 01:00:02','2023-08-13 01:00:02');
+INSERT INTO `bookings` VALUES (3,'2023-08-18 12:00:00',2,1,'Viene con bateria, trerle un micro adicional',1,3,NULL,70,'2023-08-17 23:24:38','2023-08-17 23:25:05');
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -380,7 +382,7 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,6 +393,7 @@ LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
 INSERT INTO `services` VALUES (1,'Estudio de Grabacion',25,1,NULL,NULL);
 INSERT INTO `services` VALUES (2,'Sala de Ensayo',25,1,NULL,NULL);
+INSERT INTO `services` VALUES (3,'Prueba de sonido',10,1,'2023-08-17 23:18:30','2023-08-17 23:18:30');
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,7 +424,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@estudio.com',NULL,'$2y$10$.y5NJqu1mUMUAwcjZraZS.uZgmQtRN.QrEX1kShVMOyAmunmRWFmK','AVOJLYgNdMWzRuAuj7UXAuwTKcswv4h6GoFIwQr6RGEjpoczxVO6HtLaI6AF','2023-08-12 11:02:41','2023-08-12 11:02:41');
+INSERT INTO `users` VALUES (1,'admin','admin@estudio.com',NULL,'$2y$10$.y5NJqu1mUMUAwcjZraZS.uZgmQtRN.QrEX1kShVMOyAmunmRWFmK','60WLM5086MbVTLCziQDX99KtYl0m7Q6kSlkKGwNw8zzklj5LoYx4pTDEKk5n','2023-08-12 11:02:41','2023-08-12 11:02:41');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -434,4 +437,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-12  6:21:45
+-- Dump completed on 2023-08-17 13:32:34
